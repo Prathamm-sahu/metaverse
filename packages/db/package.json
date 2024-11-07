@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "exports": {
-    "./db": {
+    "./prismaClient": {
       "types": "./src/index.ts",
       "default": "./dist/index.js"
     }
