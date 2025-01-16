@@ -1,11 +1,12 @@
 import { Request, Response, Router } from "express";
 import { UpdateMetadataSchema } from "../../types";
 import db from "@repo/db/prismaClient"
+import { userMiddleware } from "../../middlewares/user";
 
 export const userRouter = Router()
 
 // This route updates avatar of the user
-userRouter.put("/metadata", userRouter, async (req: Request, res: Response) => {
+userRouter.put("/metadata", userMiddleware, async (req: Request, res: Response) => {
   try {
     const { avatarId } = UpdateMetadataSchema.parse(req.body)
 
